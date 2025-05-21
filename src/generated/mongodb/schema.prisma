@@ -1,0 +1,25 @@
+generator mongodbClient {
+  provider = "prisma-client-js"
+  output   = "../../src/generated/mongodb"
+}
+
+datasource mongodb {
+  provider = "mongodb"
+  url      = env("MONGODB_URL")
+}
+
+model Review {
+  id         String @id @default(nanoid(11)) @map("_id") @mongodb.ObjectId
+  idx        Int
+  movieId    String
+  userId     String
+  commentary String
+  note       Int
+  status     String
+  // createdAt  DateTime @default(now()) @map("createdAt") @mongodb.Date
+  // updatedAt  DateTime @updatedAt @map("updatedAt") @mongodb.Date
+  createdAt  String @map("createdAt")
+  updatedAt  String @map("updatedAt")
+
+  @@map("cinephoria_reviews")
+}

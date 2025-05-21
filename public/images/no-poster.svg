@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="600" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="600" fill="#1A1A1A"/>
+  <g transform="translate(150, 250)">
+    <path d="M100 0L0 50V150L100 200L200 150V50L100 0Z" fill="#333333"/>
+    <path d="M100 20L20 60V140L100 180L180 140V60L100 20Z" fill="#1A1A1A"/>
+    <circle cx="100" cy="100" r="30" fill="#333333"/>
+    <circle cx="100" cy="100" r="20" fill="#1A1A1A"/>
+  </g>
+  <text x="50%" y="450" text-anchor="middle" fill="white" font-family="Arial" font-size="24">No Poster</text>
+</svg> 
