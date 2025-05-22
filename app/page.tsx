@@ -1,8 +1,5 @@
 import { LoaderCircle } from "@/components/ui/loader-circle";
-import {
-  getAllReviews,
-  getMovies,
-} from "@/features/cinephoria/data-actions/data.actions";
+import { getMovies } from "@/features/cinephoria/data-actions/data.actions";
 import { LastMovies } from "@/features/cinephoria/last-movies";
 import { MovieCardLarge } from "@/features/cinephoria/movie-cards/movie-card-large";
 import { SearchContainer } from "@/features/cinephoria/search-bar/search-container";
@@ -14,9 +11,10 @@ export default async function HomePage() {
   const moviesDataResult = await getMovies();
   const moviesData = Array.isArray(moviesDataResult) ? moviesDataResult : [];
 
-  const reviewsDataResult = await getAllReviews();
-  const reviewsData = Array.isArray(reviewsDataResult) ? reviewsDataResult : [];
-  console.log(reviewsData);
+  // Pour tester la base noSQL de MongoDB, décommenter les lignes suivantes
+  // const reviewsDataResult = await getAllReviews();
+  // const reviewsData = Array.isArray(reviewsDataResult) ? reviewsDataResult : [];
+  // console.log(reviewsData);
 
   return (
     <div className="relative flex h-fit flex-col bg-background text-foreground">
