@@ -1,6 +1,7 @@
 generator mongodbClient {
-  provider = "prisma-client-js"
-  output   = "../../src/generated/mongodb"
+  provider        = "prisma-client-js"
+  previewFeatures = ["prismaSchemaFolder"]
+  output          = "../../src/generated/mongodb"
 }
 
 datasource mongodb {
