@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 function generateSessionTimes(duration: number) {
   const baseTime = "19:00";
   const longMovieDays = ["mer", "ven", "sam"];

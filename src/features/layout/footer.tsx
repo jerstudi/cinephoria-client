@@ -53,14 +53,14 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col items-end gap-4">
             <Typography variant="large">Resources</Typography>
-            <Typography
+            {/* <Typography
               as={Link}
               variant="muted"
               className="hover:underline"
               href="/posts"
             >
               Blog
-            </Typography>
+            </Typography> */}
             <Typography
               as={Link}
               variant="muted"

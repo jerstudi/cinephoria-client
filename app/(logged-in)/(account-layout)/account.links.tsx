@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { NavigationGroup } from "@/features/navigation/navigation.type";
 import { SiteConfig } from "@/site-config";
 import {

@@ -1,3 +1,4 @@
+import { LoaderCircle } from "@/components/ui/loader-circle";
 import {
   getAllReviews,
   getMovies,
@@ -7,6 +8,7 @@ import { MovieCardLarge } from "@/features/cinephoria/movie-cards/movie-card-lar
 import { SearchContainer } from "@/features/cinephoria/search-bar/search-container";
 import { LandingHeader } from "@/features/landing/landing-header";
 import { Footer } from "@/features/layout/footer";
+import { Suspense } from "react";
 
 export default async function HomePage() {
   const moviesDataResult = await getMovies();
@@ -25,7 +27,9 @@ export default async function HomePage() {
       <div className="relative isolate mx-auto mb-10 flex max-w-7xl flex-col gap-8 rounded-lg bg-gray-900 px-6 lg:px-8">
         <MovieCardLarge movies={moviesData} favoriteTitle="Apollo 13" />
 
-        <SearchContainer movies={moviesData} />
+        <Suspense fallback={<LoaderCircle className="size-10" />}>
+          <SearchContainer movies={moviesData} />
+        </Suspense>
 
         <LastMovies movies={moviesData} />
       </div>
