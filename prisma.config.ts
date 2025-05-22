@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { config } from "dotenv";
 import path from "node:path";
 import type { PrismaConfig } from "prisma";
 
-config();
+// config();
 
-export default {
-  earlyAccess: true,
-  schema: path.join("prisma", "schema"),
-} satisfies PrismaConfig;
+// export default {
+//   earlyAccess: true,
+//   schema: path.join("prisma", "schema"),
+// } satisfies PrismaConfig;

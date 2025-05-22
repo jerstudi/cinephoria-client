@@ -32,5 +32,10 @@
     "tailwind.config.js",
     "src/features/cinephoria/data-actions"
   ],
-  "exclude": ["node_modules", ".next", "src/generated/prisma"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "src/generated/prisma",
+    "src/generated/mongodb"
+  ]
 }
