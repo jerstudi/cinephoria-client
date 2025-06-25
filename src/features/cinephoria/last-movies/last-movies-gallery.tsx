@@ -37,7 +37,7 @@ export function LastMoviesGallery({
   ));
 
   return (
-    <div className="my-10 flex w-full max-w-7xl flex-col gap-0">
+    <div className="my-10 flex w-full max-w-full flex-col gap-0">
       <Carousel items={cards} />
     </div>
   );

@@ -33,7 +33,7 @@ export function SearchResults({ movies, searchQuery }: SearchResultsProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+    <div className="grid max-w-sm grid-cols-1 gap-4 md:max-w-3xl md:grid-cols-2 lg:max-w-7xl lg:grid-cols-3">
       {filteredMovies.map((movie) => (
         <div
           key={movie.id}

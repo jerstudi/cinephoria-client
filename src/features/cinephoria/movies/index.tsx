@@ -83,7 +83,7 @@ export function Movies({ movies, cineSessions }: MoviesProps) {
   return (
     <div className="flex w-full flex-col items-center justify-center">
       <div className="mt-16"></div>
-      <div className="flex w-full items-center justify-end gap-4 rounded-lg border border-red-500/50 bg-red-600/50 p-1">
+      <div className="flex w-full flex-wrap items-center justify-end gap-4 rounded-lg border border-red-500/50 bg-red-600/50 p-4 text-xs md:text-sm lg:flex-nowrap lg:p-2 lg:text-sm">
         <div className="flex w-full items-center justify-end gap-4">
           <div>
             <Typography variant="p">Filtrer par cinéma</Typography>

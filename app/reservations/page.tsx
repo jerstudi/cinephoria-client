@@ -27,7 +27,7 @@ export default async function RoutePage(props: PageParams) {
 
       <LandingHeader />
 
-      <div className="relative isolate mx-auto mb-10 flex max-w-7xl flex-col gap-8 rounded-lg bg-gray-900 px-6 lg:px-8">
+      <div className="relative isolate mx-auto mb-10 flex max-w-sm flex-col gap-8 rounded-lg bg-gray-900 px-6 md:max-w-3xl lg:max-w-full lg:px-8">
         <Reservations cineSessions={cineSessionsData} />
       </div>
 

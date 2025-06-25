@@ -22,7 +22,7 @@ export default async function HomePage() {
 
       <LandingHeader />
 
-      <div className="relative isolate mx-auto mb-10 flex max-w-7xl flex-col gap-8 rounded-lg bg-gray-900 px-6 lg:px-8">
+      <div className="relative isolate mx-auto mb-10 flex max-w-sm flex-col gap-8 rounded-lg bg-gray-900 px-6 md:max-w-3xl lg:mx-10 lg:max-w-full lg:px-8">
         <MovieCardLarge movies={moviesData} favoriteTitle="Apollo 13" />
 
         <Suspense fallback={<LoaderCircle className="size-10" />}>

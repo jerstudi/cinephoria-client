@@ -49,11 +49,11 @@ export function MovieGrid({
   }
 
   return (
-    <div className="my-10 flex w-full max-w-7xl flex-col gap-8">
+    <div className="my-10 flex w-full max-w-sm flex-col gap-8 md:max-w-3xl lg:max-w-7xl">
       <SectionTitle title={"Films à l'affiche"} />
       <div
         className={cn(
-          "grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4",
+          "grid max-w-sm grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:max-w-3xl lg:max-w-7xl",
           className,
         )}
       >
