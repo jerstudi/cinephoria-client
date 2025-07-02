@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 import { SectionTitle } from "@/components/utils/section-title-style";
-import { cn, imageLoader } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import type { CineSession } from "../data/schemas/cineSessions.schema";
@@ -63,15 +63,15 @@ export function MovieGrid({
               <CardHeader className="p-0">
                 <div className="relative aspect-[2/3] size-auto w-full p-2">
                   <Image
-                    loader={({ src, width, quality }) =>
-                      imageLoader({
-                        src,
-                        width,
-                        quality: quality ?? 75,
-                        host: "https",
-                        domain: "image.tmdb.org",
-                      })
-                    }
+                    // loader={({ src, width, quality }) =>
+                    //   imageLoader({
+                    //     src,
+                    //     width,
+                    //     quality: quality ?? 75,
+                    //     host: "https",
+                    //     domain: "m.media-amazon.com",
+                    //   })
+                    // }
                     src={
                       movie.poster && movie.poster.length > 0
                         ? movie.poster

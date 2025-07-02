@@ -2,9 +2,9 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Typography } from "@/components/ui/typography";
-import { imageLoader } from "@/lib/utils";
 import { CircleUser, Clock2, Dot, Star, Video, VideoOff } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -44,23 +44,23 @@ export function MovieCardLarge({ movies, favoriteTitle }: MovieCardLargeProps) {
 
   return (
     <div className="relative isolate flex flex-col">
-      <main className="relative py-24 sm:py-32 lg:pb-40">
-        <div className="">
+      <div className="relative py-24 sm:py-32 lg:pb-40">
+        <Card className="mx-auto max-w-screen-xl bg-black/15 p-10">
           <div className="grid grid-cols-1 items-start justify-center gap-4 lg:grid-cols-3">
             {/* Poster */}
             <div className="flex w-full items-center justify-center">
               {selectedMovie.poster ? (
                 <div className="size-auto px-4">
                   <Image
-                    loader={({ src, width, quality }) =>
-                      imageLoader({
-                        src,
-                        width,
-                        quality: quality ?? 75,
-                        host: "https",
-                        domain: "image.tmdb.org",
-                      })
-                    }
+                    // loader={({ src, width, quality }) =>
+                    //   imageLoader({
+                    //     src,
+                    //     width,
+                    //     quality: quality ?? 75,
+                    //     host: "https",
+                    //     domain: "image.tmdb.org",
+                    //   })
+                    // }
                     src={selectedMovie.poster}
                     alt={selectedMovie.title}
                     width={800}
@@ -183,8 +183,8 @@ export function MovieCardLarge({ movies, favoriteTitle }: MovieCardLargeProps) {
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </Card>
+      </div>
     </div>
   );
 }

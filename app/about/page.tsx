@@ -1,6 +1,6 @@
-import { CinephoriaContact } from "@/features/cinephoria/contact";
-import { LandingHeader } from "@/features/landing/landing-header";
-import { Footer } from "@/features/layout/footer";
+import { AboutCinephoria } from "@/features/cinephoria/about";
+import { ResponsiveFooter } from "@/features/landing/responsive-footer";
+import { ResponsiveHeader } from "@/features/landing/responsive-header";
 import { SiteConfig } from "@/site-config";
 import type { PageParams } from "@/types/next";
 import type { Metadata } from "next";
@@ -22,14 +22,14 @@ export default async function RoutePage(props: PageParams) {
     <div className="relative flex h-fit flex-col bg-background text-foreground">
       <div className="mt-16"></div>
 
-      <LandingHeader />
+      <ResponsiveHeader breakpoint={768} />
 
       <div className="relative isolate mx-auto mb-10 flex max-w-7xl flex-col gap-8 rounded-lg bg-gray-900 px-6 lg:px-8">
         {/* <Reservations cineSessions={cineSessionsData} /> */}
-        <CinephoriaContact />
+        <AboutCinephoria />
       </div>
 
-      <Footer />
+      <ResponsiveFooter breakpoint={768} />
     </div>
   );
 }

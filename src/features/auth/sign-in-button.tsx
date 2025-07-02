@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { buttonVariants } from "@/components/ui/button";
 import { useIsClient } from "@/hooks/use-is-client";
 import type { VariantProps } from "class-variance-authority";
+import { User } from "lucide-react";
 import Link from "next/link";
 import { UserDropdown } from "./user-dropdown";
 
@@ -24,10 +25,10 @@ export const SignInButton = (props: VariantProps<typeof buttonVariants>) => {
 
   return (
     <Link
-      className={buttonVariants({ size: "sm", variant: "outline", ...props })}
+      className={buttonVariants({ size: "sm", variant: "ghost", ...props })}
       href={`/auth/signin?callbackUrl=${href}`}
     >
-      Sign in
+      <User className="size-4" />
     </Link>
   );
 };

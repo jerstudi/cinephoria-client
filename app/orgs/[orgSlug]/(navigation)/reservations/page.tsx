@@ -9,16 +9,19 @@ import { combineWithParentMetadata } from "@/lib/metadata";
 import { getRequiredCurrentOrgCache } from "@/lib/react/cache";
 import { getOrgsMembers } from "@/query/org/get-orgs-members";
 import type { PageParams } from "@/types/next";
+import { getReservations } from "./reservations.action";
 
 export const generateMetadata = combineWithParentMetadata({
-  title: "Tasks",
-  description: "Tasks manager",
+  title: "Reservations",
+  description: "Reservations manager",
 });
 
 export default async function RoutePage(props: PageParams) {
-  // const tasks = await getDemoTasks();
   const { org } = await getRequiredCurrentOrgCache(["ADMIN"]);
   const members = await getOrgsMembers(org.id);
+
+  const reservationsDataResult = await getReservations();
+  // console.log("RESERVATIONS DATA", reservationsDataResult);
 
   return (
     <Layout size="xl" className="mx-auto my-0">

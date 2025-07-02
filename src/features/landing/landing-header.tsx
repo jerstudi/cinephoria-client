@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { AuthButtonClient } from "../auth/auth-button-client";
 import { ThemeToggle } from "../theme/theme-toggle";
+import { navigationItems } from "./navigation-items";
 
 function useBoundedScroll(threshold: number) {
   const { scrollY } = useScroll();
@@ -97,40 +98,17 @@ export function LandingHeader() {
           }}
           className="flex items-center gap-4 text-sm font-medium text-muted-foreground"
         >
-          <Link
-            href="/"
-            className={cn(
-              isPathActive("/") ? "border-b-2 border-b-primary" : "",
-            )}
-          >
-            Accueil
-          </Link>
-          <Link
-            href="/reservations"
-            className={cn(
-              isPathActive("/reservations")
-                ? "border-b-2 border-b-primary"
-                : "",
-            )}
-          >
-            Réservations
-          </Link>
-          <Link
-            href="/movies"
-            className={cn(
-              isPathActive("/movies") ? "border-b-2 border-b-primary" : "",
-            )}
-          >
-            Films
-          </Link>
-          <Link
-            href="/contact"
-            className={cn(
-              isPathActive("/contact") ? "border-b-2 border-b-primary" : "",
-            )}
-          >
-            Contact
-          </Link>
+          {navigationItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                isPathActive(item.href) ? "border-b-2 border-b-primary" : "",
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
           <AuthButtonClient />
           <ThemeToggle />
         </motion.nav>

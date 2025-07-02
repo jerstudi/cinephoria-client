@@ -3,8 +3,8 @@ import { getMovies } from "@/features/cinephoria/data-actions/data.actions";
 import { LastMovies } from "@/features/cinephoria/last-movies";
 import { MovieCardLarge } from "@/features/cinephoria/movie-cards/movie-card-large";
 import { SearchContainer } from "@/features/cinephoria/search-bar/search-container";
-import { LandingHeader } from "@/features/landing/landing-header";
-import { Footer } from "@/features/layout/footer";
+import { ResponsiveFooter } from "@/features/landing/responsive-footer";
+import { ResponsiveHeader } from "@/features/landing/responsive-header";
 import { Suspense } from "react";
 
 export default async function HomePage() {
@@ -17,13 +17,15 @@ export default async function HomePage() {
   // console.log(reviewsData);
 
   return (
-    <div className="relative flex h-fit flex-col bg-background text-foreground">
+    <main className="relative flex h-fit flex-col bg-background text-foreground">
       <div className="mt-16"></div>
 
-      <LandingHeader />
+      <ResponsiveHeader breakpoint={768} />
 
       <div className="relative isolate mx-auto mb-10 flex max-w-sm flex-col gap-8 rounded-lg bg-gray-900 px-6 md:max-w-3xl lg:mx-10 lg:max-w-full lg:px-8">
-        <MovieCardLarge movies={moviesData} favoriteTitle="Apollo 13" />
+        <Suspense fallback={<LoaderCircle className="size-10" />}>
+          <MovieCardLarge movies={moviesData} favoriteTitle="Apollo 13" />
+        </Suspense>
 
         <Suspense fallback={<LoaderCircle className="size-10" />}>
           <SearchContainer movies={moviesData} />
@@ -32,7 +34,7 @@ export default async function HomePage() {
         <LastMovies movies={moviesData} />
       </div>
 
-      <Footer />
-    </div>
+      <ResponsiveFooter breakpoint={768} />
+    </main>
   );
 }

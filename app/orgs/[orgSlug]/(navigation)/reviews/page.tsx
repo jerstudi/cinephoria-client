@@ -11,8 +11,8 @@ import { getOrgsMembers } from "@/query/org/get-orgs-members";
 import type { PageParams } from "@/types/next";
 
 export const generateMetadata = combineWithParentMetadata({
-  title: "Tasks",
-  description: "Tasks manager",
+  title: "Reviews",
+  description: "Reviews manager",
 });
 
 export default async function RoutePage(props: PageParams) {
